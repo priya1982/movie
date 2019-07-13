@@ -1,0 +1,10 @@
+Genre: <%= @genre.title %> (<%= link_to "back", new_genre_path %>)
+<hr />
+<% form_for @movie do |f| -%>
+title: <%= f.text_field :title %> <br />
+year: <%= f.text_field :year %> <br />
+director: <%= f.text_field :director %> <br />
+genre: <%= f.text_field :genre %> <br />
+<%= f.submit %>
+<% end -%>
+<hr />

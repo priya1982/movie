@@ -1,0 +1,26 @@
+Enter the genre information: <br />
+<%= form_for @genre do |f| -%>
+	number: <%= f.text_field :number %> <br />
+	type: <%= f.text_field :type %> <br />
+     
+     <%=f.submit %>
+     <% end -%>
+     <hr />
+     List of all genre: <br />
+     <% if !@genres.blank? %>
+     <table border=1>
+     	<tr>
+     		<th> Number </th>
+     		<th> Type </th>
+     	</tr>
+     	<% for item in @genres %>
+     	<tr>
+
+           <td> <%= link_to item.number, :controller =>:movies, :action => :new, :id => item.id %></td>
+           <td> <%= item.type %></td>
+           <tr>
+           	<% end %>
+           </table>
+           <% else %>
+           no genre yet
+           <% end %>
